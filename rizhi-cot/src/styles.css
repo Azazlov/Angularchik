@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-html{
+*{
     margin: 0;
     padding: 0;
     color: inherit;
@@ -15,4 +15,8 @@ a{
 
 ul{
     list-style-type:circle;
+}
+
+ol{
+    list-style-type: decimal;
 }
