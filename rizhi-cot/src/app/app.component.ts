@@ -5,6 +5,17 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
+
+
 export class AppComponent {
-  title = 'rizhi-cot';
+  title: string = 'Hello, Angular';
+  
+  operation : number = 2 + 2 * 2;
 }
+
+
+
+
+
+
