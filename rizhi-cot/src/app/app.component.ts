@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title: string = 'Hello, Angular';
   
-  operation : number = 2 + 2 * 2;
+
 }
 
 

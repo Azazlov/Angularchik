@@ -1,0 +1,16 @@
+.main-header {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 7vh;
+    padding: 1rem;
+    border-top: solid black .2rem ;
+    border-bottom: solid #EBEBEB .1rem;
+  }
+  
+  .main-header > h1 {
+    color: black;
+    font-family: "Open Sans 700", sans-serif;
+  }
