@@ -30,7 +30,7 @@ export class MenuService {
       showSubMenu: false,
       subMenuItems: []
     },
-    /*{
+    {
       idItem: 31,
       itemName: 'Общая',
       itemLink: 'NULL',
@@ -40,7 +40,7 @@ export class MenuService {
       parentItem: 51,
       showSubMenu: false,
       subMenuItems: []
-    },*/
+    },
 
     {
       idItem: 5,
@@ -53,7 +53,7 @@ export class MenuService {
       showSubMenu: false,
       subMenuItems: []
     },
-    /*
+
     {
       idItem: 51,
       itemName: 'Статистика',
@@ -65,7 +65,7 @@ export class MenuService {
       showSubMenu: false,
       subMenuItems: []
     },
-    */
+
 
     {
       idItem: 7,
