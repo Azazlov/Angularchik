@@ -9,7 +9,25 @@ import { ThemeSwitcherService } from './services/theme-switcher.service';
 export class ThemeSwitcherComponent implements OnInit {
   currentTheme: string = this.themeService.currentTheme || 'light-theme';
   prevTheme : string = '';
-  constructor(private themeService: ThemeSwitcherService) {}
+  constructor(private themeService: ThemeSwitcherService) {
+
+    const darkModeMediaQuery: MediaQueryList = window.matchMedia('(prefers-color-scheme: dark)');
+
+const handleColorSchemeChange = (event: MediaQueryListEvent): void => {
+    if (event.matches) {
+
+      this.themeService.setTheme('dark-theme');
+    } else {
+
+      this.themeService.setTheme('light-theme');
+    }
+};
+
+darkModeMediaQuery.addEventListener('change', handleColorSchemeChange);
+
+// Первоначальная проверка
+handleColorSchemeChange(new MediaQueryListEvent('change', { matches: darkModeMediaQuery.matches }));
+  }
 
   ngOnInit() {
     this.themeService.setTheme(this.currentTheme);

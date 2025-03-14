@@ -1,4 +1,5 @@
 .light-theme {
+    color-scheme: light;
     --background-color: rgb(236, 236, 236);
     --block-background: white;
     --block-border-color: rgb(235, 235, 235);
@@ -18,6 +19,7 @@
   }
   
   .dark-theme {
+    color-scheme: dark;
     --background-color: #0d1117;
     --block-background: #010409;
     --block-border-color: rgb(5, 10, 17);
