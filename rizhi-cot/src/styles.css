@@ -7,7 +7,7 @@
     border: none;
     text-indent: 1px;
     box-sizing: border-box; 
-    transition: .3s;
+    transition: .3s ease-in-out;
 }
 
 a{
