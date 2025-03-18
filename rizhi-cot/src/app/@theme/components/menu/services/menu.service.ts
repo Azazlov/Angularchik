@@ -44,7 +44,7 @@ export class MenuService {
     {
       idItem: 32,
       itemName: 'По проекту',
-      itemLink: 'NULL',
+      itemLink: 'mainPage/project',
       iconTypeId: 1,
       icon: null,
       itemOrder: null,
