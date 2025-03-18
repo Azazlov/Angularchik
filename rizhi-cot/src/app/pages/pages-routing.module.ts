@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainPageComponent } from './sections/main-page/main-page.component';
 import { PagesComponent } from './pages.component';
+import { RizhiComponentComponent } from '../modules/administration/pages/users-page/component/rizhi-component/rizhi-component.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
       {
         path: 'administration',
          loadChildren: () => import('../modules/administration/administration.module').then(module => module.AdministrationModule)
+      },
+      {
+        path: 'mainPage/project',
+        component: RizhiComponentComponent
       },
 
       {
