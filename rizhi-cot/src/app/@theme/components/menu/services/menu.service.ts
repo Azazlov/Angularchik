@@ -41,6 +41,17 @@ export class MenuService {
       showSubMenu: false,
       subMenuItems: []
     },
+    {
+      idItem: 32,
+      itemName: 'По проекту',
+      itemLink: 'NULL',
+      iconTypeId: 1,
+      icon: null,
+      itemOrder: null,
+      parentItem: 51,
+      showSubMenu: false,
+      subMenuItems: []
+    },
 
     {
       idItem: 5,
