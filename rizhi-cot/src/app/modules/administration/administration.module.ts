@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { RizhiComponentComponent } from './pages/users-page/component/rizhi-component/rizhi-component.component';
 import { AddUserFormComponent } from './pages/users-page/components/add-user-form/add-user-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../../domains/modules/shared/shared.module';
 
 
 
@@ -22,7 +23,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AdministrationRoutingModule,
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ]
 })
 

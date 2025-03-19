@@ -11,9 +11,9 @@ import { MenuParentsComponent } from './@theme/components/menu/components/menu-p
 import { MenuChildrensComponent } from './@theme/components/menu/components/menu-childrens/menu-childrens.component';
 import { ThemeSwitcherComponent } from './@theme/components/header/theme-switcher/theme-switcher.component';
 import { MainPageComponent } from './pages/sections/main-page/main-page.component';
-import { TableComponent } from './@theme/components/ui/table/table.component';
 
-import { ReactiveFormsModule } from '@angular/forms';
+
+
 import { SharedModule } from '../app/domains/modules/shared/shared.module';
 
 
@@ -29,15 +29,14 @@ import { SharedModule } from '../app/domains/modules/shared/shared.module';
     MenuChildrensComponent,
     ThemeSwitcherComponent,
     MainPageComponent,
-    TableComponent,
+
 
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-
-    ReactiveFormsModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
