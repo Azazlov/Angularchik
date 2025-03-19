@@ -5,18 +5,24 @@ import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import { AdministrationRoutingModule } from './administration-routing';
 import { FormsModule } from '@angular/forms';
 import { RizhiComponentComponent } from './pages/users-page/component/rizhi-component/rizhi-component.component';
+import { AddUserFormComponent } from './pages/users-page/components/add-user-form/add-user-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
     AdminPageComponent,
     UsersPageComponent,
-    RizhiComponentComponent
+    RizhiComponentComponent,
+    AddUserFormComponent
   ],
 
   imports: [
     AdministrationRoutingModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 
