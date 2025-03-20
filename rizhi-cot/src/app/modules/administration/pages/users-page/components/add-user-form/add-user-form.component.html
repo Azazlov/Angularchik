@@ -1,8 +1,10 @@
 <header>Добавить пользователя</header>
 <main>
+  
   <form [formGroup]="addUserForm" (ngSubmit)="addNewUser()">
     <input type="text" placeholder="Логин" formControlName="userLogin" />
-    <input type="text" placeholder="Пароль" formControlName="userPassword" />
+    <input type="text" placeholder="Пароль" formControlName="userPassword">
+    <input type="checkbox" formControlName="userEnabled"/>
     <input type="text" placeholder="Имя" formControlName="userFirstName" />
     <input
       type="text"

@@ -11,6 +11,7 @@ import { DatePipe } from '@angular/common';
   providers: [DatePipe]
 })
 export class AddUserFormComponent implements OnInit {
+  
   addUserForm: FormGroup = new FormGroup({});
   users: UserRegister[] = this.UserService.users;
 
@@ -24,6 +25,7 @@ export class AddUserFormComponent implements OnInit {
     this.addUserForm = new FormGroup({
       userLogin: new FormControl('', [Validators.required]),
       userPassword: new FormControl('', [Validators.required]),
+      userEnabled: new FormControl('false'),
       userFirstName: new FormControl('', [Validators.required]),
       userLastName: new FormControl('', [Validators.required]),
       userPatronymic: new FormControl('', [Validators.required]),
@@ -32,12 +34,15 @@ export class AddUserFormComponent implements OnInit {
     });
   }
 
+
+
   addNewUser() {
+    
     const newUser: UserRegister = {
       userId: this.users.length + 1,
       userLogin: this.addUserForm.get('userLogin')?.value,
       userPassword: this.addUserForm.get('userPassword')?.value,
-      userEnabled: '1',
+      userEnabled: this.addUserForm.get('userEnabled')?.value,
       userFirstName: this.addUserForm.get('userFirstName')?.value,
       userLastName: this.addUserForm.get('userLastName')?.value,
       userPatronymic: this.addUserForm.get('userPatronymic')?.value,
