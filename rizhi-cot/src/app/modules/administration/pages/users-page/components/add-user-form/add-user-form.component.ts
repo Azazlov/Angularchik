@@ -23,7 +23,7 @@ export class AddUserFormComponent implements OnInit {
 
   initAddUserForm(): void {
     this.addUserForm = new FormGroup({
-      userLogin: new FormControl('', [Validators.required]),
+      userLogin: new FormControl('', [Validators.required, Validators.minLength(2)]),
       userPassword: new FormControl('', [Validators.required]),
       userEnabled: new FormControl('false'),
       userFirstName: new FormControl('', [Validators.required]),
@@ -37,6 +37,11 @@ export class AddUserFormComponent implements OnInit {
 
 
   addNewUser() {
+
+    if (this.addUserForm.invalid) {
+      this.addUserForm.markAllAsTouched();
+      return;
+    }
     
     const newUser: UserRegister = {
       userId: this.users.length + 1,
