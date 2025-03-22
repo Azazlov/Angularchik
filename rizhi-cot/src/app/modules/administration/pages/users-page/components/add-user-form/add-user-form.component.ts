@@ -23,12 +23,12 @@ export class AddUserFormComponent implements OnInit {
 
   initAddUserForm(): void {
     this.addUserForm = new FormGroup({
-      userLogin: new FormControl('', [Validators.required, Validators.minLength(2)]),
-      userPassword: new FormControl('', [Validators.required]),
+      userLogin: new FormControl('', [Validators.required, Validators.minLength(2), Validators.pattern('[a-z]*')]),
+      userPassword: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z0-9]*'), Validators.minLength(6)]),
       userEnabled: new FormControl('false'),
-      userFirstName: new FormControl('', [Validators.required]),
-      userLastName: new FormControl('', [Validators.required]),
-      userPatronymic: new FormControl('', [Validators.required]),
+      userFirstName: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Zа-яА-Я]*')]),
+      userLastName: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Zа-яА-Я]*')]),
+      userPatronymic: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Zа-яА-Я]*')]),
       userCreateDate: new FormControl(''),
       userBirthday: new FormControl('', [Validators.required])
     });
