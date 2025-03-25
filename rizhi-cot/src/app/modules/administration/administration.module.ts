@@ -8,6 +8,7 @@ import { RizhiComponentComponent } from './pages/users-page/component/rizhi-comp
 import { AddUserFormComponent } from './pages/users-page/components/add-user-form/add-user-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../../domains/modules/shared/shared.module';
+import { EditUserComponent } from './pages/users-page/components/edit-user/edit-user.component';
 
 
 
@@ -16,7 +17,8 @@ import { SharedModule } from '../../domains/modules/shared/shared.module';
     AdminPageComponent,
     UsersPageComponent,
     RizhiComponentComponent,
-    AddUserFormComponent
+    AddUserFormComponent,
+    EditUserComponent
   ],
 
   imports: [
