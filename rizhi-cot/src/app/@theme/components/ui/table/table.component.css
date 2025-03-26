@@ -15,3 +15,44 @@ table {
   td {
     background-color: var(--block-child-background);
   }
+
+  .black{
+
+    td{
+      animation: black 1s infinite alternate-reverse ease-in-out;
+    }
+  }
+
+  .tudasuda{
+    animation: tudasuda .15s infinite alternate-reverse ease-in-out;
+  }
+  .sudatuda{
+    animation: sudatuda .15s infinite alternate-reverse ease-in-out;
+  }
+
+@keyframes black {
+  from{
+    
+  }
+  to{
+    background-color: rgba(136, 136, 136, 0.651);
+  }
+}
+
+@keyframes tudasuda {
+  from{
+    transform: translateX(.03rem) rotate(1.5deg) translateY(-.03rem);
+  }
+  to{
+    transform: translateX(-.03rem) rotate(-1.5deg) translateY(.03rem);
+  }
+}
+
+@keyframes sudatuda{
+  from{
+    transform: translateX(-.03rem) rotate(-1.5deg) translateY(.03rem);
+  }
+  to{
+    transform: translateX(.03rem) rotate(1.5deg) translateY(-.03rem);
+  }
+}

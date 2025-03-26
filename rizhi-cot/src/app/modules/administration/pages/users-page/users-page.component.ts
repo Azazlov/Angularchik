@@ -18,6 +18,19 @@ export class UsersPageComponent {
 
   onAddUserBtn() {
     this.asideIndex = 1;
+    for (let i = 0; i < document.querySelectorAll('tr').length; i++){
+      let untrs = document.querySelectorAll('tr')[i]
+      let unps = untrs.querySelectorAll('p')
+      untrs.classList.remove('black')
+      for (let g = 0; g < unps.length; g++){
+        if (g % 2 ===0){
+          unps[g].classList.remove('sudatuda')
+        }
+        else{
+          unps[g].classList.remove('tudasuda')
+        }
+      }
+    }
   }
 
   // клик по юзеру в таблице
