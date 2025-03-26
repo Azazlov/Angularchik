@@ -4,6 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserRegister } from '../../../../../../domains/modules/user.model';
 import { DatePipe } from '@angular/common';
 
+
 @Component({
   selector: 'app-add-user-form',
   templateUrl: './add-user-form.component.html',
@@ -14,12 +15,13 @@ export class AddUserFormComponent implements OnInit {
   
   addUserForm: FormGroup = new FormGroup({});
   users: UserRegister[] = this.UserService.users;
+  roles = this.UserService.roles;
 
   constructor(private UserService: UserService, private datePipe: DatePipe) {}
 
   ngOnInit(): void {
     this.initAddUserForm();
-    
+    console.log(this.roles)
   }
 
   initAddUserForm(): void {
@@ -31,7 +33,9 @@ export class AddUserFormComponent implements OnInit {
       userLastName: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Zа-яА-Я]*')]),
       userPatronymic: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Zа-яА-Я]*')]),
       userCreateDate: new FormControl(''),
-      userBirthday: new FormControl('', [Validators.required])
+      userBirthday: new FormControl('', [Validators.required]),
+      isAdmin: new FormControl(false),
+      isStudent: new FormControl(false)
     });
   }
 
@@ -54,10 +58,18 @@ export class AddUserFormComponent implements OnInit {
       userPatronymic: this.addUserForm.get('userPatronymic')?.value,
       userCreateDate: this.getCurrentDateTime(),
       userBirthday: this.addUserForm.get('userBirthday')?.value,
+      isAdmin: this.addUserForm.get('isAdmin')?.value,
+      isStudent: this.addUserForm.get('isStudent')?.value
     };
-  
+    if (newUser) {
+      const roles = [];
+      if (newUser.isAdmin) roles.push('admin');
+      if (newUser.isStudent) roles.push('student');
+      this.UserService.updateUserRoles(newUser.userId, roles);
+    }
     this.users.push(newUser);
     this.addUserForm.reset();
+    console.log(newUser)
   }
   
   getFieldErrors(fieldName: string) {

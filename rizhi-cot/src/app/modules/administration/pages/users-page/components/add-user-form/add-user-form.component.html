@@ -48,6 +48,16 @@
         <small *ngIf="getFieldErrors('userBirthday')?.['required']">Дата рождения обязательна</small>
       </div>
     </div>
+    <label>
+      <input
+        type="checkbox" formControlName="isAdmin">
+      Админ
+    </label>
+    <label>
+      <input
+        type="checkbox" formControlName="isStudent">
+      Студент
+    </label>
     <button type='submit' [disabled]='addUserForm.invalid'>Добавить</button>
   </form>
 </main>

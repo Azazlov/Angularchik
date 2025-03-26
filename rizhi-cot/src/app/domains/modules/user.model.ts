@@ -8,4 +8,6 @@ export interface UserRegister {
     userPatronymic: string;
     userCreateDate?: string | Date;
     userBirthday?: string | Date;
+    isAdmin?: boolean;
+    isStudent?: boolean;
   }
