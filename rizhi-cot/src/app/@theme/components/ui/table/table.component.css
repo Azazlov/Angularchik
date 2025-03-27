@@ -17,9 +17,39 @@ table {
   }
 
   .black{
-
     td{
       animation: black 1s infinite alternate-reverse ease-in-out;
+    }
+  }
+
+  .admin{
+    p{
+      border-radius: 9px;
+      text-align: center;
+      background-color: red;
+    }
+  }
+
+  .student{
+    p{
+      border-radius: 9px;
+      text-align: center;
+      background-color: yellow;
+    }
+  }
+  .studentAdmin{
+    p{
+      border-radius: 9px;
+      text-align: center;
+      background-color: greenyellow;
+    }
+  }
+
+  .empty{
+    p{
+      border-radius: 9px;
+      text-align: center;
+      background-color: violet;
     }
   }
 

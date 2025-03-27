@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserRegister } from '../../../../../../domains/modules/user.model';
 import { DatePipe } from '@angular/common';
+import { EditUserComponent } from '../edit-user/edit-user.component';
+import { timeout } from 'rxjs';
+EditUserComponent
 
 
 @Component({
@@ -19,9 +22,37 @@ export class AddUserFormComponent implements OnInit {
 
   constructor(private UserService: UserService, private datePipe: DatePipe) {}
 
+  checkAdminsStudents(){
+
+    for (const key in this.roles) {
+
+      document.querySelectorAll('tr')[Number(key)].querySelector('td')?.classList.remove('empty')
+      document.querySelectorAll('tr')[Number(key)].querySelector('td')?.classList.remove('student')
+      document.querySelectorAll('tr')[Number(key)].querySelector('td')?.classList.remove('admin')
+      document.querySelectorAll('tr')[Number(key)].querySelector('td')?.classList.remove('studentAdmin')
+      if (this.roles[key][0] === 'admin' && this.roles[key][1] === 'student'){
+
+        document.querySelectorAll('tr')[Number(key)].querySelector('td')?.classList.add('studentAdmin')
+      }
+      else if (this.roles[key][0] === 'admin'){
+
+        document.querySelectorAll('tr')[Number(key)].querySelector('td')?.classList.add('admin')
+      }
+      else if (this.roles[key][0] === 'student'){
+
+        document.querySelectorAll('tr')[Number(key)].querySelector('td')?.classList.add('student')
+      }
+      else{
+        document.querySelectorAll('tr')[Number(key)].querySelector('td')?.classList.add('empty')
+      }
+    }
+  }
+
   ngOnInit(): void {
     this.initAddUserForm();
-    console.log(this.roles)
+    setTimeout(() => {
+      this.checkAdminsStudents();
+  }, 1);
   }
 
   initAddUserForm(): void {
@@ -69,7 +100,9 @@ export class AddUserFormComponent implements OnInit {
     }
     this.users.push(newUser);
     this.addUserForm.reset();
-    console.log(newUser)
+    setTimeout(() => {
+      this.checkAdminsStudents();
+  }, 1);
   }
   
   getFieldErrors(fieldName: string) {

@@ -13,7 +13,7 @@ export class EditUserComponent implements OnInit, OnChanges {
   @Output() userUpdate = new EventEmitter<UserRegister>(); // нужно для отправки обновленных данных пользователя
 
   editUserForm: FormGroup;
-
+  roles = this.userService.roles;
   isAdmin = false;
   isStudent = false;
 
@@ -98,6 +98,30 @@ export class EditUserComponent implements OnInit, OnChanges {
       };
       this.userUpdate.emit(updatedUser);
     }
+    setTimeout(() => {
+      for (const key in this.roles) {
+        document.querySelectorAll('tr')[Number(key)].querySelector('td')?.classList.remove('empty')
+        document.querySelectorAll('tr')[Number(key)].querySelector('td')?.classList.remove('student')
+        document.querySelectorAll('tr')[Number(key)].querySelector('td')?.classList.remove('admin')
+        document.querySelectorAll('tr')[Number(key)].querySelector('td')?.classList.remove('studentAdmin')
+        if (this.roles[key][0] === 'admin' && this.roles[key][1] === 'student'){
+
+          document.querySelectorAll('tr')[Number(key)].querySelector('td')?.classList.add('studentAdmin')
+        }
+        else if (this.roles[key][0] === 'admin'){
+
+          document.querySelectorAll('tr')[Number(key)].querySelector('td')?.classList.add('admin')
+        }
+        else if (this.roles[key][0] === 'student'){
+
+          document.querySelectorAll('tr')[Number(key)].querySelector('td')?.classList.add('student')
+        }
+        else{
+          document.querySelectorAll('tr')[Number(key)].querySelector('td')?.classList.add('empty')
+        }
+      }
+      console.log('kasdjfksjdf')
+    }, 1);
   }
 
   onRoleChange(role: string, event: any) {
@@ -116,11 +140,31 @@ export class EditUserComponent implements OnInit, OnChanges {
       if (this.isStudent) roles.push('student');
       this.userService.updateUserRoles(this.selectedUser.userId, roles).subscribe(response => {
         console.log('Roles updated:', response);
+        for (const key in this.roles) {
+          document.querySelectorAll('tr')[Number(key)].querySelector('td')?.classList.remove('empty')
+          document.querySelectorAll('tr')[Number(key)].querySelector('td')?.classList.remove('student')
+          document.querySelectorAll('tr')[Number(key)].querySelector('td')?.classList.remove('admin')
+          document.querySelectorAll('tr')[Number(key)].querySelector('td')?.classList.remove('studentAdmin')
+          if (this.roles[key][0] === 'admin' && this.roles[key][1] === 'student'){
+
+            document.querySelectorAll('tr')[Number(key)].querySelector('td')?.classList.add('studentAdmin')
+          }
+          else if (this.roles[key][0] === 'admin'){
+
+            document.querySelectorAll('tr')[Number(key)].querySelector('td')?.classList.add('admin')
+          }
+          else if (this.roles[key][0] === 'student'){
+
+            document.querySelectorAll('tr')[Number(key)].querySelector('td')?.classList.add('student')
+          }
+          else{
+            document.querySelectorAll('tr')[Number(key)].querySelector('td')?.classList.add('empty')
+          }
+        }
       }, error => {
         console.error('Error updating roles:', error);
       });
     }
-
   }
 
   // обязательное форматирование даты для birthday

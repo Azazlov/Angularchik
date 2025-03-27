@@ -10,7 +10,7 @@ import { UserService } from '../../../../domains/services/user.service';
 export class UsersPageComponent {
   // 0 - скрыть | 1 - добавить пользователя | 2 - редактировать пользователя
   asideIndex: number = 1;
-
+  roles = this.userService.roles;
   users: UserRegister[] = this.userService.users;
   selectedUser: UserRegister | null = null; // выбранный юзер (при клике на таблице, для редактирования)
 
