@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PagesComponent } from './pages/pages.component';
 import { HeaderComponent } from './@theme/components/header/header.component';
-import { SidebarComponent } from './@theme/components/sidebar/sidebar.component';
+SidebarMainComponent
 import { FooterComponent } from './@theme/components/footer/footer.component';
 import { MenuParentsComponent } from './@theme/components/menu/components/menu-parents/menu-parents.component';
 import { MenuChildrensComponent } from './@theme/components/menu/components/menu-childrens/menu-childrens.component';
@@ -15,6 +15,7 @@ import { MainPageComponent } from './pages/sections/main-page/main-page.componen
 
 
 import { SharedModule } from '../app/domains/modules/shared/shared.module';
+import { SidebarMainComponent } from './@theme/components/sidebar/sidebar.component';
 
 
 
@@ -23,7 +24,7 @@ import { SharedModule } from '../app/domains/modules/shared/shared.module';
     AppComponent,
     PagesComponent,
     HeaderComponent,
-    SidebarComponent,
+    SidebarMainComponent,
     FooterComponent,
     MenuParentsComponent,
     MenuChildrensComponent,
