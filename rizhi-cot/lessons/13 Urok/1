@@ -1,0 +1,1 @@
+создал компонент по адресу pages/sections/news, добавил его в роутинг в pages-routing.module.ts, дал ссылку mainPage/news, а также добавил его в объекты MenuItem в файле menu.service.ts и дал ему родительный элемент 51 "Статистика"
