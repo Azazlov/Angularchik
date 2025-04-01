@@ -21,6 +21,10 @@ const routes: Routes = [
         path: 'mainPage/project',
         component: RizhiComponentComponent
       },
+      {
+        path: 'mainPage/news',
+        component: NewsComponent
+      },
 
       {
         path: '',
