@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainPageComponent } from './sections/main-page/main-page.component';
 import { PagesComponent } from './pages.component';
 import { RizhiComponentComponent } from '../modules/administration/pages/users-page/component/rizhi-component/rizhi-component.component';
+import { NewsComponent } from './sections/news/news.component';
 
 const routes: Routes = [
   {

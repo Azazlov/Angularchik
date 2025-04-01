@@ -16,6 +16,7 @@ import { MainPageComponent } from './pages/sections/main-page/main-page.componen
 
 import { SharedModule } from '../app/domains/modules/shared/shared.module';
 import { SidebarMainComponent } from './@theme/components/sidebar/sidebar.component';
+import { NewsComponent } from './pages/sections/news/news.component';
 
 
 
@@ -30,6 +31,7 @@ import { SidebarMainComponent } from './@theme/components/sidebar/sidebar.compon
     MenuChildrensComponent,
     ThemeSwitcherComponent,
     MainPageComponent,
+    NewsComponent,
 
 
 
