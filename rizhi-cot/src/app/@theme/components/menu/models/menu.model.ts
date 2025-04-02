@@ -9,3 +9,4 @@ export interface MenuItem {
     showSubMenu?: boolean | null;
     subMenuItems?: MenuItem[] | null;
   }
+

@@ -1,2 +1,12 @@
-<p>news works!</p>
-<img src="https://primamediamts.servicecdn.ru/f/big/2644/2643030.jpg?dcf7768e9c4b0185072af6f72ac2b592" alt="" style="width: 100%; height: 100%;">
+<h1 class="title">Новости</h1>
+
+<div *ngFor="let news of newItems" class="newsItem">
+    <div class="newsName" >
+        <h2>{{ news.newsName }}</h2>
+        <div class="imgBlock">
+            <img [src]="news.newsImg" alt="" class="newsImg">
+        </div>
+    </div>
+    
+    <p class="newsDescription" >{{ news.newsDescription }}</p>
+</div>
