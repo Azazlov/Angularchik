@@ -3,9 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserRegister } from '../../../../../../domains/modules/user.model';
 import { DatePipe } from '@angular/common';
-import { EditUserComponent } from '../edit-user/edit-user.component';
-import { timeout } from 'rxjs';
-EditUserComponent
+
 
 
 @Component({

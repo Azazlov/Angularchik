@@ -5,6 +5,17 @@
     border: solid var(--block-child-background-hover);
     border-radius: 7px;
     margin: 2rem;
+    width: 70%;
+    flex-direction: row;
+}
+
+.newsBlock{
+    flex-direction: row;
+}
+
+.news{
+    display: flex;
+    flex-direction: row;
 }
 
 .newsItem:hover{
