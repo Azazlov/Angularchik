@@ -20,7 +20,7 @@ export class newNewsItem {
 
 P.S. Огонёк не раскаялся и уже присмотрел новую цель — антресоли. 📦😹`,
             newsImg: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEQkLI-TiS_d5_uxqRMQJJ0XApgrZIe1ouFA&s',
-            newsEnable: true
+            newsEnable: false
         },
 
         {

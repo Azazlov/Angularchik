@@ -1,12 +1,13 @@
 <h1 class="title">Новости</h1>
 
-<div *ngFor="let news of newItems" class="newsItem">
-    <div class="newsName" >
-        <h2>{{ news.newsName }}</h2>
-        <div class="imgBlock">
-            <img [src]="news.newsImg" alt="" class="newsImg">
+<div *ngFor="let news of newItems">
+    <div *ngIf="news.newsEnable" class="newsItem">
+        <div class="newsName">
+            <h2>{{ news.newsName }}</h2>
+            <div class="imgBlock">
+                <img [src]="news.newsImg" alt="" class="newsImg">
+            </div>
         </div>
+        <p class="newsDescription" >{{ news.newsDescription }}</p>
     </div>
-    
-    <p class="newsDescription" >{{ news.newsDescription }}</p>
 </div>

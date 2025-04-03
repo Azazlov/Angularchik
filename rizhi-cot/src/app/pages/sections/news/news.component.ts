@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { newsItem } from 'src/app/@theme/components/menu/models/news.model';
 import { newNewsItem } from 'src/app/@theme/components/menu/services/news.service';
 
