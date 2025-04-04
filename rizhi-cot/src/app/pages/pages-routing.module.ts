@@ -4,6 +4,7 @@ import { MainPageComponent } from './sections/main-page/main-page.component';
 import { PagesComponent } from './pages.component';
 import { RizhiComponentComponent } from '../modules/administration/pages/users-page/component/rizhi-component/rizhi-component.component';
 import { NewsComponent } from './sections/news/news.component';
+import { NewsEditComponent } from './sections/edit-news/edit-news.component';
 
 const routes: Routes = [
   {
@@ -24,7 +25,7 @@ const routes: Routes = [
       },
       {
         path: 'mainPage/news',
-        component: NewsComponent
+        component: NewsEditComponent
       },
 
       {

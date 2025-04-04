@@ -1,0 +1,84 @@
+ <form [formGroup]="newsForm" (ngSubmit)="onSubmit()" class="news-edit-form">
+    <!-- Поле названия новости -->
+    <div class="form-group">
+      <label for="newsName">Название новости</label>
+      <input
+        type="text"
+        id="newsName"
+        formControlName="newsName"
+        class="form-control"
+        [class.is-invalid]="f['newsName'].invalid && (f['newsName'].dirty || f['newsName'].touched)">
+      
+      <div *ngIf="f['newsName'].invalid && (f['newsName'].dirty || f['newsName'].touched)"
+           class="invalid-feedback">
+        <div *ngIf="f['newsName'].errors?.['required']">Обязательное поле</div>
+        <div *ngIf="f['newsName'].errors?.['minlength']">
+          Минимум {{ f['newsName'].errors?.['minlength'].requiredLength }} символов
+        </div>
+        <div *ngIf="f['newsName'].errors?.['maxlength']">
+          Максимум {{ f['newsName'].errors?.['maxlength'].requiredLength }} символов
+        </div>
+      </div>
+    </div>
+  
+    <!-- Поле описания -->
+    <div class="form-group">
+      <label for="newsDescription">Описание новости</label>
+      <textarea
+        id="newsDescription"
+        formControlName="newsDescription"
+        rows="5"
+        class="form-control"
+        [class.is-invalid]="f['newsDescription'].invalid && (f['newsDescription'].dirty || f['newsDescription'].touched)"></textarea>
+      
+      <div *ngIf="f['newsDescription'].invalid && (f['newsDescription'].dirty || f['newsDescription'].touched)"
+           class="invalid-feedback">
+        <div *ngIf="f['newsDescription'].errors?.['required']">Обязательное поле</div>
+        <div *ngIf="f['newsDescription'].errors?.['minlength']">
+          Минимум {{ f['newsDescription'].errors?.['minlength'].requiredLength }} символов
+        </div>
+      </div>
+    </div>
+  
+    <!-- Поле изображения -->
+    <div class="form-group">
+      <label for="newsImg">Ссылка на изображение</label>
+      <input
+        type="url"
+        id="newsImg"
+        formControlName="newsImg"
+        class="form-control"
+        [class.is-invalid]="f['newsImg'].invalid && (f['newsImg'].dirty || f['newsImg'].touched)">
+      
+      <div *ngIf="f['newsImg'].invalid && (f['newsImg'].dirty || f['newsImg'].touched)"
+           class="invalid-feedback">
+        <div *ngIf="f['newsImg'].errors?.['required']">Обязательное поле</div>
+      </div>
+      
+      <!-- Превью изображения -->
+      <div *ngIf="f['newsImg'].value" class="image-preview mt-2">
+        <img [src]="f['newsImg'].value" alt="Превью" class="img-thumbnail" style="max-height: 200px;">
+      </div>
+    </div>
+  
+    <!-- Чекбокс активности -->
+    <div class="form-check mb-3">
+      <input
+        type="checkbox"
+        id="newsEnable"
+        formControlName="newsEnable"
+        class="form-check-input">
+      <label class="form-check-label" for="newsEnable">Активная новость</label>
+    </div>
+  
+    <!-- Кнопки формы -->
+    <div class="form-actions">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="isSubmitting || newsForm.invalid">
+        <span *ngIf="!isSubmitting">Сохранить изменения</span>
+        <span *ngIf="isSubmitting" class="spinner-border spinner-border-sm"></span>
+      </button>
+    </div>
+  </form>

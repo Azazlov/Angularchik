@@ -9,14 +9,11 @@ import { newNewsItem } from 'src/app/@theme/components/menu/services/news.servic
   styleUrls: ['./news.component.css']
 })
 
-export class NewsComponent implements OnInit{
+export class NewsComponent{
   newsData =  new newNewsItem();
   newItems: newsItem[] = this.newsData.newsItems;
 
   newsForm: FormGroup = new FormGroup({});
 
-  ngOnInit(): void {
-
-  }
 }
 

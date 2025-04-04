@@ -37,6 +37,7 @@ import { AddNewsComponent } from './pages/sections/add-news/add-news.component';
 
 
 
+
   ],
   imports: [
     BrowserModule,
